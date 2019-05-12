@@ -8,7 +8,7 @@ bg = Image.open("C:/Users/Martin/Pictures/backgrounds/darkgreen.jpg")
 im = bg.copy()
 im.paste(img, (0, 0))
 
-im.show()
+
 
 h, w, l = np.array(img).shape
 
@@ -42,7 +42,7 @@ def imgProcess(rawImages):
 		xcord = (1280 - w) // 2
 		ycord = (720 - h) // 2
 
-		rando = random.randint(0, len(backs))
+		rando = random.randint(0, len(backs) - 1)
 		bcopy = backs[rando].copy()
 		bcopy.paste(image, (xcord, ycord))
 		ret.append(bcopy)
@@ -58,6 +58,12 @@ def imgFromFile(path):
 			ret.append(img)
 	return ret
 		
+
+path = "C:/Users/Martin/git/AVRS/data"
+raw_imgs = imgFromFile(path)
+
+hah = imgProcess(raw_imgs)
+hah[0].show()
 		
 
 		
