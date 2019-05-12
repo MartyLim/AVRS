@@ -59,7 +59,5 @@ def imgFromFile(path):
 	return ret
 		
 
-if 
-		
 
 		
