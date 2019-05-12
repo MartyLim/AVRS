@@ -59,11 +59,7 @@ def imgFromFile(path):
 	return ret
 		
 
-path = "C:/Users/Martin/git/AVRS/data"
-raw_imgs = imgFromFile(path)
-
-hah = imgProcess(raw_imgs)
-hah[0].show()
+if 
 		
 
 		
