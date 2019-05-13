@@ -1,5 +1,7 @@
 import subprocess
 
-subprocess.call('', shell = True)
+
+txt = open('test.txt', 'r')
+
 
 

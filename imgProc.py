@@ -2,7 +2,6 @@ from PIL import Image
 import cv2, random, os
 import numpy as np
 
-img = Image.open("C:/Users/Martin/git/AVRS/data/test.jpg")
 bg = Image.open("C:/Users/Martin/Pictures/backgrounds/darkgreen.jpg")
 
 im = bg.copy()
