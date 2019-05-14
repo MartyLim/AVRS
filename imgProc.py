@@ -2,24 +2,6 @@ from PIL import Image
 import cv2, random, os
 import numpy as np
 
-bg = Image.open("C:/Users/Martin/Pictures/backgrounds/darkgreen.jpg")
-
-im = bg.copy()
-im.paste(img, (0, 0))
-
-
-
-h, w, l = np.array(img).shape
-
-
-vid = cv2.VideoWriter("demo.avi", cv2.VideoWriter_fourcc(*'DIVX'), 10, (1280, 720))
-
-for _ in range(100):
-	vid.write(np.array(im))
-
-vid.release()
-
-
 
 def imgProcess(rawImages):
 	#load in backgrounds
@@ -53,13 +35,21 @@ def imgProcess(rawImages):
 
 def imgFromFile(path):
 	ret = []
+	orient = []
 	for filename in os.listdir(path):
-		if filename[-4:] == ".jpg":
-			img_path = os.path.join(path, filename)
-			img = Image.open(img_path)
-			ret.append(img)
+		if filename[-4:] == ".JPG" or filename[-4:] == ".jpg":
+			if len(filename) < 9 or filename[-9:-4] != "title":
+				orient.append(filename)
+	orient.sort()
+	for filename in orient:
+		img_path = os.path.join(path, filename)
+		img = Image.open(img_path)
+		ret.append(img)
 	return ret
 		
+arr = imgFromFile("C:/Users/Martin/reddit/1")
 
-
+for i in imgProcess(arr):
+	i.show()
+	
 		
